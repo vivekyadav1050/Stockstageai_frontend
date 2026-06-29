@@ -434,6 +434,6 @@ VITE_API_URL=https://ai-investment-research-agent-q131.onrender.com/api
 
 **Vivek Yadav**
 
-AI Product Development Engineer Internship Assignment
+Software Developer
 
 2026
