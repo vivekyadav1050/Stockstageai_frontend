@@ -1,0 +1,235 @@
+/* ============================================
+   COMPANY CARD — Dark Glassmorphism
+   ============================================ */
+
+.company-card {
+  width: 100%;
+  padding: 1.75rem 2rem;
+  background: var(--bg-card, rgba(30, 41, 59, 0.55));
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.06));
+  border-radius: var(--radius-lg, 24px);
+  box-shadow: var(--shadow-card, 0 25px 50px -12px rgba(0, 0, 0, 0.6));
+  transition: all var(--transition, 0.3s cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.company-card:hover {
+  background: var(--bg-card-hover, rgba(30, 41, 59, 0.8));
+  border-color: var(--border-hover, rgba(99, 102, 241, 0.25));
+  box-shadow: var(--shadow-hover, 0 30px 60px -15px rgba(99, 102, 241, 0.3));
+  transform: translateY(-4px);
+}
+
+/* ---- Header ---- */
+.company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.company-name {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.company-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary, #f1f5f9);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.company-ticker {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-start, #6366f1);
+  background: rgba(99, 102, 241, 0.12);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.company-exchange {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary, #94a3b8);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Meta Info (Sector / Industry / Country) ---- */
+.company-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm, 12px);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary, #94a3b8);
+  font-weight: 500;
+}
+
+.meta-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #f1f5f9);
+}
+
+/* ---- Business Summary ---- */
+.company-summary {
+  margin: 1.5rem 0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary, #f1f5f9);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.summary-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #94a3b8);
+  margin: 0;
+}
+
+/* ---- Strengths & Risks Grid ---- */
+.strength-risk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.strength-box,
+.risk-box {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md, 16px);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.03);
+  transition: background var(--transition);
+}
+
+.strength-box:hover {
+  background: rgba(34, 197, 94, 0.06);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.risk-box:hover {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.strength-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4ade80;
+  margin-bottom: 0.75rem;
+}
+
+.risk-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f87171;
+  margin-bottom: 0.75rem;
+}
+
+.strength-list,
+.risk-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.strength-list li,
+.risk-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.strength-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #4ade80;
+  font-weight: 700;
+}
+
+.risk-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #f87171;
+  font-weight: 700;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .company-card {
+    padding: 1.25rem;
+  }
+
+  .company-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-title {
+    font-size: 1.5rem;
+  }
+
+  .strength-risk-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .company-meta {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .company-title {
+    font-size: 1.25rem;
+  }
+
+  .strength-box,
+  .risk-box {
+    padding: 1rem;
+  }
+}

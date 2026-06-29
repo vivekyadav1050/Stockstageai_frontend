@@ -1,0 +1,139 @@
+/* ========== Home Specific ========== */
+.home {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  min-height: 100vh;
+}
+
+/* ========== Header ========== */
+.home-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.home-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.5rem;
+  /* Uses the global gradient-text class — apply directly in JSX or here */
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+/* ========== Search Bar Wrapper ========== */
+.search-wrapper {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* ========== Loading ========== */
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+/* ========== Error ========== */
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  backdrop-filter: blur(8px);
+}
+
+.error-icon {
+  font-size: 1.25rem;
+}
+
+.error {
+  color: #fca5a5;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ========== Results Grid (Modern Masonry-like layout) ========== */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+/* Each card in the grid uses the global .glass-card styles.
+   We add a slight unique padding and ensure full width. */
+.results-grid > * {
+  /* Inherits .glass-card if you add that class in JSX,
+     but we keep fallback styles here just in case */
+  background: var(--bg-card);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.results-grid > *:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+/* ========== Responsive Grid ========== */
+@media (min-width: 768px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  /* Make specific cards span full width */
+  .results-grid > :first-child,
+  .results-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    padding: 2.5rem 4rem 5rem;
+  }
+  .results-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* ========== Animations ========== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

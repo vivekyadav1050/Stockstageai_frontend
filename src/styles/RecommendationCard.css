@@ -1,0 +1,217 @@
+.recommendation-card{
+
+    margin-top:30px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+.recommendation-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.recommendation-header h2{
+
+    color:#0f172a;
+
+}
+
+.badge{
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:14px;
+
+}
+
+.strong{
+
+    background:#15803d;
+
+}
+
+.invest{
+
+    background:#22c55e;
+
+}
+
+.hold{
+
+    background:#eab308;
+
+    color:black;
+
+}
+
+.pass{
+
+    background:#dc2626;
+
+}
+
+.recommendation-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:20px;
+
+}
+
+.recommend-box{
+
+    background:#f8fafc;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:12px;
+
+}
+
+.recommend-box h4{
+
+    color:#64748b;
+
+    margin-bottom:10px;
+
+}
+
+.recommend-box p{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#2563eb;
+
+}
+
+.summary-box{
+
+    margin-top:30px;
+
+    background:#eff6ff;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}
+
+.summary-box h3{
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+
+}
+
+.summary-box p{
+
+    line-height:1.7;
+
+    color:#475569;
+
+}
+
+.pros-cons{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+.pros{
+
+    background:#ecfdf5;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}
+
+.cons{
+
+    background:#fef2f2;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}
+
+.pros h3{
+
+    color:#15803d;
+
+    margin-bottom:15px;
+
+}
+
+.cons h3{
+
+    color:#dc2626;
+
+    margin-bottom:15px;
+
+}
+
+.pros li,
+
+.cons li{
+
+    list-style:none;
+
+    margin-bottom:12px;
+
+    line-height:1.6;
+
+}
+
+@media(max-width:768px){
+
+    .recommendation-header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .pros-cons{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

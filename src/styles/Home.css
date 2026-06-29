@@ -1,0 +1,231 @@
+/* ============================================
+   HOME — Dark Theme (matches index.css)
+   ============================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-home: #0b1120;
+  --bg-card: rgba(30, 41, 59, 0.55);
+  --bg-card-hover: rgba(30, 41, 59, 0.8);
+
+  /* Text */
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+
+  /* Accent (indigo → purple gradient) */
+  --accent-start: #6366f1;
+  --accent-end: #a855f7;
+  --accent-glow: rgba(99, 102, 241, 0.3);
+
+  /* Shadows */
+  --shadow-sm: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 50px rgba(99, 102, 241, 0.25);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(99, 102, 241, 0.25);
+
+  /* Radius & transitions */
+  --radius: 24px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== Home container ========== */
+.home {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  background: var(--bg-home);
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ========== Header ========== */
+.home-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.home-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Search Bar wrapper ========== */
+.home .search-bar-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+/* ========== Loading ========== */
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+/* ========== Error ========== */
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-sm);
+}
+
+.error-icon {
+  font-size: 1.5rem;
+}
+
+.error {
+  color: #fca5a5;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ========== Results Grid ========== */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ========== Glass‑morphism Cards ========== */
+.results-grid > * {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition),
+              background var(--transition), border-color var(--transition);
+}
+
+.results-grid > *:hover {
+  transform: translateY(-4px);
+  background: var(--bg-card-hover);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-hover);
+}
+
+/* ========== Responsive Grid ========== */
+@media (min-width: 768px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Full‑width cards (first and last) */
+  .results-grid > :first-child,
+  .results-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home {
+    padding: 2.5rem 4rem 5rem;
+  }
+  .results-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* ========== Fade‑up Animation ========== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== Scrollbar (Dark) ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-home);
+}
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-start);
+}
+/* ===== Description text under header ===== */
+.description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0.5rem auto 1.5rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* ===== Divider ===== */
+.header-divider {
+  width: 80px;
+  height: 3px;
+  margin: 1.5rem auto 0;
+  background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  border-radius: 20px;
+  opacity: 0.7;
+}
+
+/* ===== Loading text ===== */
+.loading-text {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-align: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ===== Footer ===== */
+.home-footer {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.home-footer .accent-text {
+  color: var(--accent-start);
+  font-weight: 600;
+}
